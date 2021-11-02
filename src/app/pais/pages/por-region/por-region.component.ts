@@ -14,7 +14,7 @@ import { PaisService } from '../../services/pais.service';
   ]
 })
 export class PorRegionComponent  {
-
+  //v3 motor "Africa", "Americas", "Asia", "Europe", "Oceania"
   regiones:string[]=["Africa", "Americas", "Asia", "Europe", "Oceania"];
   regionActiva:string='';
   paises:Country[]=[];
