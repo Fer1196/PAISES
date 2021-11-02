@@ -1,0 +1,67 @@
+
+<div *ngIf="!pais; else divPais">
+    <div class="alert alert-info">
+        Espere porf favor 
+    </div>
+</div>
+
+<ng-template #divPais>
+    <div class="row">
+        <div class="col-12">
+            <h1>Pais: <small>{{pais.name.common}}</small></h1>
+        </div>
+    
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <h3>Bandera</h3>
+            <img [src]="pais.flags.png" class="img-thumbnail" />
+        </div>
+
+        <div class="col">
+            <h3>Informacion</h3>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <strong>Poblacion</strong> {{pais.population | number}}
+                </li>
+
+                <li class="list-group-item">
+                    <strong>Capital </strong>   {{pais.capital }}
+                   
+                </li>
+
+                <li class="list-group-item">
+                    <strong>CCN3 </strong>   {{pais.ccn3}}
+                   
+                </li>
+                
+            </ul>
+        </div>
+
+
+        <h3>Frontera</h3>
+        <div class="row">
+            <div class="col">
+
+                <span class="badge bg-primary mr-1">{{pais.status}}</span>
+                <span class="badge bg-primary mr-1">{{pais.capital}}</span>
+                <span class="badge bg-primary mr-1">{{pais.region}}</span>
+                <span class="badge bg-primary mr-1">{{pais.subregion}}</span>
+                <span class="badge bg-primary mr-1">{{pais.borders}}</span>
+                <span class="badge bg-primary mr-1">{{pais.area |number}}</span>
+                <span class="badge bg-primary mr-1">{{pais.fifa}}</span>
+                <span class="badge bg-primary mr-1">{{this.pais.postalCode?.format}}</span>
+            </div>
+        </div>
+    </div>
+
+    <pre class="mt-5">
+        {{pais | json}}
+    </pre>
+
+
+
+</ng-template>
+
+
